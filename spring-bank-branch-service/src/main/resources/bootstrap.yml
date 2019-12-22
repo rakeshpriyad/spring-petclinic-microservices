@@ -1,9 +1,9 @@
-#spring:
-#  cloud:
+spring:
+  cloud:
 #    config:
 #      uri: http://localhost:8888
-#  application:
-#    name: customers-service
+  application:
+    name: branch-service
 #---
 #spring:
 #  profiles: docker
