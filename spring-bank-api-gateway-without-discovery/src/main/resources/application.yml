@@ -1,0 +1,15 @@
+zuul:
+  routes:
+    branch-service:
+      path: /api/branch-service/**
+      url: http://localhost:8070
+
+    customers-service:
+      path: /api/customers-service/**
+      url: http://localhost:8090
+
+# To disable eureka client
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
