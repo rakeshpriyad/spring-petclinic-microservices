@@ -15,13 +15,19 @@
  */
 package com.test.bank.branch.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+
 import javax.persistence.*;
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
 @Table(name = "emp")
-public class Employee {
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
+public class Employee implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -36,14 +42,13 @@ public class Employee {
     private String age;
 
     @Column(name = "dob")
-    @Temporal(TemporalType.DATE)
     private LocalDate dob;
 
-    @ManyToOne
+    @ManyToOne(cascade = {CascadeType.MERGE})
     @JoinColumn(name = "branch_id")
     private Branch branch;
 
-    @ManyToOne
+    @ManyToOne(cascade = {CascadeType.ALL})
     @JoinColumn(name = "address_id")
     private Address address;
 

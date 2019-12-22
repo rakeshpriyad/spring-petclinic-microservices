@@ -58,7 +58,7 @@ public class BranchController {
         final Optional<Branch> branch = branchRepository.findById(branchId);
 
         final Branch branchModel = branch.orElseThrow(() -> new ResourceNotFoundException("Branch "+branchId+" not found"));
-        log.info("Saving Branch {}", branchModel);
+       /// log.info("Saving Branch {}", branchModel);
 
         for(Employee emp:  branch.get().getEmployees()) {
             System.out.println(emp.getEmpNo());

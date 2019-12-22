@@ -24,9 +24,6 @@ public class Address {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "age")
-    private String age;
-
     @Column(name = "address")
     private String address;
 
@@ -50,13 +47,6 @@ public class Address {
         this.id = id;
     }
 
-    public String getAge() {
-        return age;
-    }
-
-    public void setAge(String age) {
-        this.age = age;
-    }
 
     public String getAddress() {
         return address;
@@ -102,7 +92,6 @@ public class Address {
     public String toString() {
         return "Address{" +
             "id=" + id +
-            ", age='" + age + '\'' +
             ", address='" + address + '\'' +
             ", city='" + city + '\'' +
             ", state='" + state + '\'' +
