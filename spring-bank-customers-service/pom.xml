@@ -15,7 +15,7 @@
         <maven.compiler.target>1.8</maven.compiler.target>
         <docker.image.exposed.port>8081</docker.image.exposed.port>
         <docker.image.dockerfile.dir>${basedir}/../docker</docker.image.dockerfile.dir>
-		<spring-boot.version>2.1.4.RELEASE</spring-boot.version>
+		<spring-boot.version>2.5.12</spring-boot.version>
 		<spring-cloud.version>2.1.4.RELEASE</spring-cloud.version>
         <maven-surefire-plugin.version>2.22.0</maven-surefire-plugin.version>
     </properties>
